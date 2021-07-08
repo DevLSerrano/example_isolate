@@ -18,7 +18,6 @@ class IsolateExample {
         await Isolate.spawn(myIsolate, isolateToMainStream.sendPort);
 
     isolateToMainStream.listen((data) async {
-      print('$data');
       if (data == null) {
         onClose(myIsolateInstance, isolateToMainStream);
       } else if (data.isNotEmpty) {

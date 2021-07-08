@@ -19,10 +19,16 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           await isolateModel.start();
-          await repository.functionLogin();
+          await repository.functionOne();
+          await repository.functionTwo();
+          await repository.functionThree();
+          await repository.functionFour();
         },
+        child: Icon(Icons.play_arrow),
       ),
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('Isolates'),
+      ),
     );
   }
 }
